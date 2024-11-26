@@ -13,8 +13,8 @@ dbconnect();
 app.use(express.json());
 
 // Routes
-app.use("/auth/api", authrouter);
-app.use("/user/api", userrouter);
+app.use("/api/auth", authrouter);
+app.use("/api/user", userrouter);
 
 // Start the server
 const PORT = process.env.PORT || 3000; // Uses the value from .env, or defaults to 3000

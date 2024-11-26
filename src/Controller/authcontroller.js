@@ -32,7 +32,7 @@ const login = async (req, res) => {
   }
 
   // Generate token
-  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' }); // Consistent secret name
+  const token = jwt.sign({ id: user._id ,role: user.role}, process.env.JWT_SECRET, { expiresIn: '1h' }); // Consistent secret name
 
   // Send token to the user
   res.status(200).json({ token });
